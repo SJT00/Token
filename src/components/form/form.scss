@@ -1,7 +1,6 @@
 #grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1em;
   #user {
     box-sizing: border-box;
     padding: 5px 5px;
