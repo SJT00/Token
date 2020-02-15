@@ -9,6 +9,7 @@
     box-sizing: border-box;
     padding: 5px 5px;
     margin: 6px;
+    height: 5ex;
 
     border: 1px solid black;
     border-radius: 4px;
@@ -17,10 +18,10 @@
 #enterButton {
   margin-top: 20px;
   #enter {
-    width: 30%;
-    margin-left: 35%;
-    margin-right: 35%;
-    text-align: center;
+    width: 16vw;
+    height: 5ex;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 12px;
     padding: 5px 5px;
     border-radius: 8px;
