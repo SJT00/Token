@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./icons/forbidden.svg";
+import "./App.css";
+import Form from "./components/form/form";
 
 function App() {
   return (
     <div className="App">
+      <link
+        href="https://fonts.googleapis.com/css?family=Poppins"
+        rel="stylesheet"
+      />
       <header className="App-header">
+        <h1>Alcoholics Nononymous</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <Form />
     </div>
   );
 }
