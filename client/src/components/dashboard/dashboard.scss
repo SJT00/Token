@@ -3,10 +3,11 @@
   width: 80vw;
   margin-top: 5vh;
   margin-left: 10%;
-  border: 5px solid white;
-  border-radius: 20px;
   #map {
     height: 100%;
-    width: 100%;
+    border: 5px solid white;
+    border-radius: 25px;
+    margin: 5px;
   }
+  margin-bottom: 3ex;
 }

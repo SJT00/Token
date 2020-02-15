@@ -38,7 +38,6 @@ export class Dashboard extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         this.setState({ quote: data[quoteNumber].text });
         data[quoteNumber].author
           ? this.setState({ author: data[quoteNumber].author })
