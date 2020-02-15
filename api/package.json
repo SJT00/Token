@@ -13,6 +13,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
+    "radar-sdk-js": "^1.1.0",
     "twilio": "^3.39.4"
   }
 }
