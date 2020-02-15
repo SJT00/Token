@@ -1,6 +1,9 @@
 #grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  max-width: 33vw;
+  margin-left: auto;
+  margin-right: auto;
   #user {
     box-sizing: border-box;
     padding: 5px 5px;
