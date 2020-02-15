@@ -5,23 +5,13 @@ import "./dashboard.scss";
 import Radar from "radar-sdk-js";
 
 const publishableKeyTest =
-  "prj_test_pk_18a262454c6ea8c5d56b3e167aa959927f035d7e";
+  "prj_test_pk_2193569a3505e0bfb9ceb29738241a65a1c1ef7c";
 Radar.initialize(publishableKeyTest);
 
 let userId = "saad";
 Radar.setUserId(userId);
-
-const getSoberDays = soberSince => {
-  const today = new Date();
-  return (today.getTime() - soberSince.getTime()) / (1000 * 3600 * 24);
-};
-
-const soberFrom = new Date("2019", "00", "01");
-let description = `Saad Jahanzeb Taj (19) - Sober for ${getSoberDays(
-  soberFrom
-)} days.`;
+let description = "Saad Taj";
 Radar.setDescription(description);
-
 
 export class Dashboard extends Component {
     constructor(props) {
@@ -32,7 +22,7 @@ export class Dashboard extends Component {
         };
     }
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         let quoteNumber = Math.floor(Math.random() * 1643);
         fetch("https://type.fit/api/quotes")
             .then(function(res) {
@@ -49,13 +39,39 @@ export class Dashboard extends Component {
             });
     }
 
+    trackUser = () => {
+        Radar.trackOnce(function(status, location, user, events) {
+            if (status === Radar.STATUS.SUCCESS) {
+                let _tag = user.geofences[0].tag;
+                if (_tag === "liquorStore" || _tag === "pub" || _tag === "bar"){
+                    fetch("http://localhost:9000/sendText30Mins")
+                        .then(() => null);
+                    // use this fetch to call "May have entered dangerous area"
+                    // fetch("http://localhost:9000/sendText") 
+                }
+            }    
+        });
+    }
+
+    componentDidMount = () => {
+        window.setInterval(this.trackUser, 10000);
+    }
+
     render() {
         const { quote, author } = this.state;
         return (
         <>
             <div id="map"></div>
             <p style={{ marginLeft: "18vw", marginRight: "18vw", textAlign: "center", color: "white", marginBottom: "0px" }}>"{quote}"</p>
-            <p style={{ marginLeft: "18vw", marginRight: "18vw", textAlign: "center", color: "white", marginTop: "5px" }}>-<i>{author}</i></p>
+            <p style={{
+                marginLeft: "18vw",
+                marginRight: "18vw", 
+                textAlign: "center", 
+                color: "white", 
+                marginTop: "5px" 
+                }}>
+                <i>{author}</i>
+            </p>
         </>
         );
     }

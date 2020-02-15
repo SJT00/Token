@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
     buddies.map(buddy => 
         client.messages.create({
-            body: 'Message from Token: Saad may have just entered a high-risk area.',
+            body: 'Message from Token: Saad may still be in a high-risk area.',
             to: buddy,
             from: '+16476938696'
         })
