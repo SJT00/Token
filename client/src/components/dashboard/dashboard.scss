@@ -1,6 +1,12 @@
-#map {
-  height: 50%;
-  width: 80%;
+#map-container {
+  height: 85vh;
+  width: 80vw;
+  margin-top: 5vh;
   margin-left: 10%;
-  border: 2px, solid, white;
+  border: 5px solid white;
+  border-radius: 20px;
+  #map {
+    height: 100%;
+    width: 100%;
+  }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import maps_icon from "../../icons/map.svg";
 import settings_icon from "../../icons/gear.svg";
+import history from "../../history";
 import "./sidebar.scss";
 
 export class Sidebar extends Component {
@@ -13,10 +14,13 @@ export class Sidebar extends Component {
       <div className="sidebar">
         <ul>
           <li>
-            <img src={maps_icon} onClick="" />
+            <img src={maps_icon} />
           </li>
           <li>
-            <img src={settings_icon} />
+            <img
+              src={settings_icon}
+              onClick={() => history.push("/settings")}
+            />
           </li>
         </ul>
       </div>

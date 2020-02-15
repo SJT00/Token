@@ -2,25 +2,26 @@
   position: absolute;
   background-color: #adc2eb;
   margin: 0;
-  width: 5.5em;
+  width: 4.5em;
   margin-top: 1%;
   border-radius: 0 25px 25px 0;
-  height: 90%;
+  height: 80vh;
   ul {
     list-style-type: none;
     padding-inline-start: 0.25em;
     padding-inline-end: 0.25em;
     margin: 0;
     li {
-      margin-top: 1ex;
-      margin-bottom: 1ex;
+      margin-top: 2ex;
+      margin-bottom: 2ex;
     }
     li:hover {
-      background-color: rgb(91, 187, 247);
-      border-radius: 0 25px 0 0;
+      background-color: #c9c5c2;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
     }
     img {
-      max-width: 5em;
+      max-width: 4em;
       border-radius: 50%;
     }
   }

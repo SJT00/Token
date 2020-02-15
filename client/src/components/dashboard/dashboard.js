@@ -51,7 +51,9 @@ export class Dashboard extends Component {
     return (
       <>
         <Sidebar />
-        <div id="map"></div>
+        <div id="map-container">
+          <div id="map"></div>
+        </div>
         <p
           style={{
             marginLeft: "18vw",
