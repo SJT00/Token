@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import "./home.scss";
+import { NavLink } from "react-router-dom";
 import logo from "../../icons/forbidden.svg";
 import Form from "../form/form";
 

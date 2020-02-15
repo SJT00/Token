@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import history from "../../history";
 import "./form.scss";
 const Form = () => {
   const [username, setUsername] = useState("");
@@ -15,6 +16,7 @@ const Form = () => {
     if (username === "saad" && password === "taj") {
       setLoggedOn(true);
       alert("Logged In.");
+      history.push("/dashboard");
     } else {
       setLoggedOn(false);
       alert("Username or password incorrect. Please try again.");
