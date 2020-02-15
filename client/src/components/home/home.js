@@ -22,10 +22,12 @@ export class Home extends Component {
           rel="stylesheet"
         />
         <header className="header">
-          <h1 className="title">Alcoholics Nononymous</h1>
+          <h1 className="title" style={{marginBottom: "0px"}}>Token</h1>
+          <p style={{marginTop: "0px"}}><i>An app to help alcoholics achieve sobriety.</i></p>
           <img src={logo} className="logo" alt="logo" />
-          <button onClick={this.callAPI}>Press to send text</button>
+          {/* <button onClick={this.callAPI}>Press to send text</button> */}
         </header>
+        <p style={{color: "white", marginBottom: "0px"}}><i>Please enter your credentials:</i></p>
         <Form />
       </div>
     );

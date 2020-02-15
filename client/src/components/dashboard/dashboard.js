@@ -22,17 +22,43 @@ let description = `Saad Jahanzeb Taj (19) - Sober for ${getSoberDays(
 )} days.`;
 Radar.setDescription(description);
 
+
 export class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <>
-        <div id="map"></div>
-      </>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            quote: "",
+            author: ""
+        };
+    }
+
+    componentDidMount = () => {
+        let quoteNumber = Math.floor(Math.random() * 1643);
+        fetch("https://type.fit/api/quotes")
+            .then(function(res) {
+                return res.json();
+            })
+            .then((data) => {
+                this.setState({ quote: data[quoteNumber].text });
+                if (data[quoteNumber].author === null) {
+                    this.setState({ author: "Unknown" });
+                }
+                else {
+                    this.setState({ author: data[quoteNumber].author });
+                }
+            });
+    }
+
+    render() {
+        const { quote, author } = this.state;
+        return (
+        <>
+            <div id="map"></div>
+            <p style={{ textAlign: "center", color: "white", marginBottom: "0px" }}>"{quote}"</p>
+            <p style={{ textAlign: "center", color: "white", marginTop: "5px" }}>-<i>{author}</i></p>
+        </>
+        );
+    }
 }
 
 export default Dashboard;

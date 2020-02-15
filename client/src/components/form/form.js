@@ -15,11 +15,9 @@ const Form = () => {
     // TODO: needs backend work to see what to do with login request
     if (username === "saad" && password === "taj") {
       setLoggedOn(true);
-      alert("Logged In.");
       history.push("/dashboard");
     } else {
       setLoggedOn(false);
-      alert("Username or password incorrect. Please try again.");
     }
   };
   return (
