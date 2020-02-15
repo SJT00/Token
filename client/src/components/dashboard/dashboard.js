@@ -54,8 +54,8 @@ export class Dashboard extends Component {
         return (
         <>
             <div id="map"></div>
-            <p style={{ textAlign: "center", color: "white", marginBottom: "0px" }}>"{quote}"</p>
-            <p style={{ textAlign: "center", color: "white", marginTop: "5px" }}>-<i>{author}</i></p>
+            <p style={{ marginLeft: "18vw", marginRight: "18vw", textAlign: "center", color: "white", marginBottom: "0px" }}>"{quote}"</p>
+            <p style={{ marginLeft: "18vw", marginRight: "18vw", textAlign: "center", color: "white", marginTop: "5px" }}>-<i>{author}</i></p>
         </>
         );
     }
