@@ -8,14 +8,17 @@ var twilio = require('twilio');
 var client = new twilio(accountSid, authToken);
 
 router.get('/', function(req, res, next) {
-    res.send('Complete');
+    res.send('Send text request received.');
+    let buddies = ['+12899686783', '+12895012662', '+19057338786'];
 
-    client.messages.create({
-        body: 'pls work',
-        to: '+12899686783',  // Text this number
-        from: '+16476938696' // From a valid Twilio number
-    })
-    .then((message) => console.log(message.sid));
+    buddies.map(buddy => 
+        client.messages.create({
+            body: 'pls work',
+            to: buddy,
+            from: '+16476938696'
+        })
+        .then((message) => console.log(message.sid))
+    );
 });
 
 module.exports = router;
