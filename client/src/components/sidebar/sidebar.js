@@ -15,7 +15,7 @@ export class Sidebar extends Component {
       <div
         className="sidebar"
         style={
-          history.location.pathname === "/"
+          !this.props.open
             ? { visibility: "hidden" }
             : { visibility: "visible" }
         }

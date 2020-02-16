@@ -10,7 +10,12 @@ export class Home extends Component {
     super(props);
   }
 
+  componentDidMount = () => {
+    console.log(this.props);
+  }
+  
   render() {
+    let { getLoggedIn } = this.props;
     return (
       <div className="home">
         <link
@@ -23,7 +28,7 @@ export class Home extends Component {
           <img src={logo} className="logo" alt="logo" />
         </header>
         <p style={{color: "#adc2eb", marginBottom: "0px"}}><i>Please enter your credentials:</i></p>
-        <Form />
+        <Form getLoggedIn={getLoggedIn}/>
       </div>
     );
   }
