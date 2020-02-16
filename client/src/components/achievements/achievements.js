@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Progressbar from "../progressbar/progressbar";
 import "./achievements.scss";
 import day from "../../icons/1.svg";
 import two_months from "../../icons/2.svg";
@@ -17,7 +18,8 @@ export class Achievements extends Component {
     super(props);
     this.state = {
       soberDays: this.props.soberDays,
-      currmilestones: this.getMilestones(this.props.soberDays)
+      currmilestones: this.getMilestones(this.props.soberDays),
+      percentage: 0
     };
   }
 
@@ -56,15 +58,15 @@ export class Achievements extends Component {
       "Year"
     ];
     const currmile_i = this.state.currmilestones.findIndex(e => e === 0);
+    this.state.percentage = this.state.soberDays / (30 * currmile_i) || 0;
     return (
       <div className="achievements-container">
         <div className="box">
-          <div id="progressbar"></div>
+          <Progressbar percentage={this.state.percentage} />
           <p style={{ textAlign: "center" }}>
             Progress to next milestone of {currmile_i <= 1 ? "a" : ""}{" "}
             {milestones[currmile_i]}
           </p>
-
           <div id="token-holder">
             <p>Your tokens (so far):</p>
             <span

@@ -45,7 +45,12 @@ export class App extends Component {
               />
               <Route
                 path="/dashboard"
-                component={() => <Dashboard getSoberDays={this.getSobriety} />}
+                component={() => (
+                  <Dashboard
+                    getSoberDays={this.getSobriety}
+                    debugSobriety={this.debugSobriety}
+                  />
+                )}
               />
               <Route
                 path="/achievements"
@@ -60,6 +65,7 @@ export class App extends Component {
                     soberDays={this.state.soberDays}
                     drinking={this.state.drinking}
                     startDate={this.state.startDate}
+                    debugSobriety={this.debugSobriety}
                   />
                 )}
               />
