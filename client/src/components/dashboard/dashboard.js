@@ -19,8 +19,15 @@ export class Dashboard extends Component {
         this.state = {
             quote: "",
             author: "",
-            drinking: false
+            drinking: false,
+            soberDays: 0,
         };
+    }
+
+    getSoberDays = (startDate) => {
+        let today = new Date();
+        let soberDays = (today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+        return Math.round(soberDays) - 1;
     }
 
     componentWillMount = () => {
@@ -81,45 +88,47 @@ export class Dashboard extends Component {
     }
 
     componentDidMount = () => {
-        console.log("componentDidMount");
+        let startDate = new Date("2020-01-01");
+        this.state.soberDays = this.getSoberDays(startDate);
+        
         let time = 10000;
         window.setTimeout(this.trackUser, time);
     };
 
-  render() {
-    const { quote, author } = this.state;
-    return (
-      <>
-        <Sidebar />
-        <div id="map-container">
-          <div id="map"></div>
-        </div>
-        <p
-          style={{
-            marginLeft: "18vw",
-            marginRight: "18vw",
-            textAlign: "center",
-            color: "white",
-            marginBottom: "0px"
-          }}
-        >
-          "{quote}"
-        </p>
-        <p
-          style={{
-            marginLeft: "18vw",
-            marginRight: "18vw",
-            textAlign: "center",
-            color: "white",
-            marginTop: "5px",
-            marginBottom: "0px"
-          }}
-        >
-          -<i>{author}</i>
-        </p>
-      </>
-    );
-  }
+    render() {
+        const { quote, author, soberDays } = this.state;
+        return (
+        <>
+            <Sidebar />
+            <div id="map-container">
+            <div id="map"></div>
+            </div>
+            <p
+            style={{
+                marginLeft: "18vw",
+                marginRight: "18vw",
+                textAlign: "center",
+                color: "white",
+                marginBottom: "0px"
+            }}
+            >
+            "{quote}"
+            </p>
+            <p
+            style={{
+                marginLeft: "18vw",
+                marginRight: "18vw",
+                textAlign: "center",
+                color: "white",
+                marginTop: "5px",
+                marginBottom: "0px"
+            }}
+            >
+            -<i>{author}</i>
+            </p>
+        </>
+        );
+    }
 }
 
 export default Dashboard;
