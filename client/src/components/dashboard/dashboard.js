@@ -86,39 +86,40 @@ export class Dashboard extends Component {
         window.setTimeout(this.trackUser, time);
     };
 
-    render() {
-        const { quote, author } = this.state;
-        return (
-            <>
-                <Sidebar />
-                <div id="map-container">
-                    <div id="map"></div>
-                </div>
-                <p
-                    style={{
-                        marginLeft: "18vw",
-                        marginRight: "18vw",
-                        textAlign: "center",
-                        color: "white",
-                        marginBottom: "0px"
-                    }}
-                >
-                    "{quote}"
-                </p>
-                <p
-                    style={{
-                        marginLeft: "18vw",
-                        marginRight: "18vw",
-                        textAlign: "center",
-                        color: "white",
-                        marginTop: "5px"
-                    }}
-                >
-                    -<i>{author}</i>
-                </p>
-            </>
-        );
-    }
+  render() {
+    const { quote, author } = this.state;
+    return (
+      <>
+        <Sidebar />
+        <div id="map-container">
+          <div id="map"></div>
+        </div>
+        <p
+          style={{
+            marginLeft: "18vw",
+            marginRight: "18vw",
+            textAlign: "center",
+            color: "white",
+            marginBottom: "0px"
+          }}
+        >
+          "{quote}"
+        </p>
+        <p
+          style={{
+            marginLeft: "18vw",
+            marginRight: "18vw",
+            textAlign: "center",
+            color: "white",
+            marginTop: "5px",
+            marginBottom: "0px"
+          }}
+        >
+          -<i>{author}</i>
+        </p>
+      </>
+    );
+  }
 }
 
 export default Dashboard;
