@@ -115,7 +115,6 @@ export class Dashboard extends Component {
             textAlign: "center",
             color: "white",
             marginTop: "5px",
-            marginBottom: "0px"
           }}
         >
           -<i>{author}</i>

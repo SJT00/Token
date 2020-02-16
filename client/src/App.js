@@ -8,14 +8,29 @@ import Dashboard from "./components/dashboard/dashboard";
 import Settings from "./components/settings/settings";
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: true
+    }
+  }
+  
+  getLoggedIn = (loggedIn) => {
+    this.setState({loggedIn: loggedIn});
+  }
+
   render() {
     return (
       <div className="App">
-        <Sidebar history={history} />
+        <Sidebar open={this.state.loggedIn} />
         <BrowserRouter>
           <Router history={history}>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route 
+                exact 
+                path="/" 
+                component={() => <Home getLoggedIn={this.getLoggedIn} />}
+                />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/settings" component={Settings} />
             </Switch>
