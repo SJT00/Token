@@ -1,7 +1,5 @@
 ## TOKEN 
-
-<img src="./media/logIn.png" title="login" alt="login" width="350" height="250" />
-<img src="./media/dashboard.png" title="dashboard" alt="dashboard" width="350" height="250" />
+ <img src="./media/logIn.png" title="login" alt="login" />
 
 ### Motivation 
 Heavy drinking is an issue for 19% of Canadians over the age of twelve.
@@ -11,6 +9,8 @@ Recovering from alcoholism is very difficult and almost always requires interven
 
 This app will track location when given permission, and will notify a selected loved one when one enters a 'high risk area', such as a bar, pub, liquor store, etc.
 This app also tracks progress and rewards tokens when high risk areas are avoided at certain milestones to help motivate users.<br />
+ 
+<img src="./media/dashboard.png" title="dashboard" alt="dashboard" />
 
 ###  Technologies
 
