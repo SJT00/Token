@@ -64,21 +64,49 @@ export class Achievements extends Component {
           <p style={{ textAlign: "center" }}>
             Progress to next milestone of {currmile_i <= 1 ? "a" : ""} {milestones[currmile_i]}
           </p>
+
           <div id="token-holder">
-            <h1>Tokens:</h1>
-            <img src={day} />
-            <img src={day} />
-            <img src={two_months} />
-            <img src={three_months} />
-            <img src={four_months} />
+            <p>Your tokens (so far):</p>
+            <span style= {currmile_i >0 ? {visibility:"visible"}:{visibility:"hidden"}}>
+              <img src={day} />
+              <p>First Day!</p>
+            </span>
+            <span style= {currmile_i >1 ? {visibility:"visible"}:{visibility:"hidden"}}>
+              <img src={day} />
+              <p>First Month!</p></span>
+            <span style= {currmile_i >2 ? {visibility:"visible"}:{visibility:"hidden"}}>
+              <img src={two_months} />
+              <p>Two Months!</p></span>
+            <span style= {currmile_i >3 ? {visibility:"visible"}:{visibility:"hidden"}}> 
+              <img src={three_months} />
+              <p>Three Months!</p></span>
+            <span style= {currmile_i >4 ? {visibility:"visible"}:{visibility:"hidden"}}>
+              <img src={four_months} />
+              <p>Four Months!</p></span>
+              <span style= {currmile_i >5 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={five_months} />
+            <p>Five Months!</p></span>
+            <span style= {currmile_i >6 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={six_months} />
+            <p>Six Months!</p></span>
+            <span style= {currmile_i >7 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={seven_months} />
+            <p>Seven Months!</p></span>
+            <span style= {currmile_i >8 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={eight_months} />
+            <p>Eight Months!</p></span>
+            <span style= {currmile_i >9 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={nine_months} />
+            <p>Nine Months!</p></span>
+            <span style= {currmile_i >10 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={ten_months} />
+            <p>Ten Months!</p></span>
+            <span style= {currmile_i >11 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={eleven_months} />
+            <p>Eleven Months!</p></span>
+            <span style= {currmile_i >12 ? {visibility:"visible"}:{visibility:"hidden"}}>
             <img src={year} />
+            <p>A Year!</p></span>
           </div>
         </div>
       </div>

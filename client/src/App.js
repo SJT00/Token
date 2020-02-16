@@ -29,7 +29,6 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>{this.state.soberDays}</div>
         <Sidebar open={this.state.loggedIn} />
         <BrowserRouter>
           <Router history={history}>
