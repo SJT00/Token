@@ -18,9 +18,17 @@ export class Dashboard extends Component {
     this.state = {
       quote: "",
       author: "",
-      drinking: false
+      drinking: false,
+      soberDays: 0
     };
   }
+
+  getSoberDays = startDate => {
+    let today = new Date();
+    let soberDays =
+      (today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+    return Math.round(soberDays) - 1;
+  };
 
   componentWillMount = () => {
     let quoteNumber = Math.floor(Math.random() * 1643);
@@ -75,15 +83,18 @@ export class Dashboard extends Component {
   };
 
   componentDidMount = () => {
-    console.log("componentDidMount");
+    let startDate = new Date("2020-01-01");
+    this.state.soberDays = this.getSoberDays(startDate);
+
     let time = 10000;
     window.setTimeout(this.trackUser, time);
   };
 
   render() {
-    const { quote, author } = this.state;
+    const { quote, author, soberDays } = this.state;
     return (
       <>
+        <Sidebar />
         <div id="map-container">
           <div id="map"></div>
         </div>
