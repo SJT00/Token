@@ -15,22 +15,6 @@ import year from "../../icons/12.svg";
 export class Achievements extends Component {
   constructor(props) {
     super(props);
-    const milestones = [
-      "Day",
-      "Month",
-      "Two months",
-      "Three months",
-      "Four months",
-      "Five months",
-      "Six months",
-      "Seven months",
-      "Eight months",
-      "Nine months",
-      "Ten months",
-      "Eleven months",
-      "Year"
-    ];
-    console.log(this.props.soberDays);
     this.state = {
       soberDays: this.props.soberDays,
       currmilestones: this.getMilestones(this.props.soberDays)
@@ -56,12 +40,29 @@ export class Achievements extends Component {
   };
 
   render() {
+    const milestones = [
+      "Day",
+      "Month",
+      "Two months",
+      "Three months",
+      "Four months",
+      "Five months",
+      "Six months",
+      "Seven months",
+      "Eight months",
+      "Nine months",
+      "Ten months",
+      "Eleven months",
+      "Year"
+    ];
+    const currmile_i = this.state.currmilestones.findIndex((e) => e === 0);
     return (
+
       <div className="achievements-container">
         <div className="box">
           <div id="progressbar"></div>
           <p style={{ textAlign: "center" }}>
-            Progress to next mile stone {this.state.currmilestones}
+            Progress to next milestone of {currmile_i <= 1 ? "a" : ""} {milestones[currmile_i]}
           </p>
           <div id="token-holder">
             <h1>Tokens:</h1>

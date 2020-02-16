@@ -14,7 +14,7 @@ export class App extends Component {
     const soberDays = 0;
     this.state = {
       loggedIn: true,
-      soberDays
+      soberDays: 0
     };
   }
 
@@ -23,12 +23,13 @@ export class App extends Component {
   };
 
   getSoberDays = newsoberDays => {
-    this.setState({ soberDays: newsoberDays });
+    this.state.soberDays = newsoberDays;
   };
 
   render() {
     return (
       <div className="App">
+        <div>{this.state.soberDays}</div>
         <Sidebar open={this.state.loggedIn} />
         <BrowserRouter>
           <Router history={history}>
