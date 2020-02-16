@@ -113,6 +113,12 @@ export class Dashboard extends Component {
   };
 
   componentDidMount = () => {
+    const script = document.createElement("script");
+    script.src =
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCDljIxG6OIlJaIRgwap7gkfigOC2nne1Q&callback=initMap";
+    script.async = true;
+    document.body.appendChild(script);
+
     let time = 10000;
     window.setTimeout(this.trackUser, time);
   };

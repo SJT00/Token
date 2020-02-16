@@ -64,8 +64,10 @@ export class Achievements extends Component {
         <div className="box">
           <Progressbar percentage={this.state.percentage} />
           <p style={{ textAlign: "center" }}>
-            Progress to next milestone of {currmile_i <= 1 ? "a" : ""}{" "}
+            Progress to next milestone: {currmile_i <= 1 ? "a" : ""}{" "}
             {milestones[currmile_i]}
+            <br />
+            {30 * currmile_i - this.state.soberDays} days left to go!
           </p>
           <div id="token-holder">
             <p>Your tokens (so far):</p>
