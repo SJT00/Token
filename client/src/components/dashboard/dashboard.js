@@ -69,7 +69,7 @@ export class Dashboard extends Component {
   };
 
   trackUser = () => {
-    let time = this.state.drinking ? 60000 : 10000;
+    let time = this.state.drinking ? 30000 : 10000;
     if (!this.state.drinking) {
       Radar.trackOnce(function(status, location, user, events) {
         if (status === Radar.STATUS.SUCCESS) {
@@ -85,7 +85,7 @@ export class Dashboard extends Component {
         (1000 * 60 * 60 * 24);
       this.state.soberDays = 0;
       this.state.sobcalc = false;
-      time = 60000;
+      time = 30000;
       window.setTimeout(this.trackUser, time);
     } else {
       Radar.trackOnce(function(status, location, user, events) {
@@ -107,7 +107,7 @@ export class Dashboard extends Component {
         (1000 * 60 * 60 * 24);
       this.state.soberDays = 0;
       this.state.sobcalc = false;
-      time = 60000;
+      time = 30000;
       window.setTimeout(this.trackUser, time);
     }
   };
