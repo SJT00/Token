@@ -11,14 +11,20 @@ import Settings from "./components/settings/settings";
 export class App extends Component {
   constructor(props) {
     super(props);
+    const soberDays = 0;
     this.state = {
-      loggedIn: true
-    }
+      loggedIn: true,
+      soberDays
+    };
   }
-  
-  getLoggedIn = (loggedIn) => {
-    this.setState({loggedIn: loggedIn});
-  }
+
+  getLoggedIn = loggedIn => {
+    this.setState({ loggedIn: loggedIn });
+  };
+
+  getSoberDays = newsoberDays => {
+    this.setState({ soberDays: newsoberDays });
+  };
 
   render() {
     return (
@@ -27,13 +33,21 @@ export class App extends Component {
         <BrowserRouter>
           <Router history={history}>
             <Switch>
-              <Route 
-                exact 
-                path="/" 
+              <Route
+                exact
+                path="/"
                 component={() => <Home getLoggedIn={this.getLoggedIn} />}
-                />
-              <Route path="/dashboard" component={Dashboard} />
-              <Route path="/achievements" component={Achievements} />
+              />
+              <Route
+                path="/dashboard"
+                component={() => <Dashboard getSoberDays={this.getSoberDays} />}
+              />
+              <Route
+                path="/achievements"
+                component={() => (
+                  <Achievements soberDays={this.state.soberDays} />
+                )}
+              />
               <Route path="/settings" component={Settings} />
             </Switch>
           </Router>

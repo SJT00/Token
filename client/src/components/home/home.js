@@ -10,10 +10,6 @@ export class Home extends Component {
     super(props);
   }
 
-  componentDidMount = () => {
-    console.log(this.props);
-  }
-  
   render() {
     let { getLoggedIn } = this.props;
     return (
@@ -23,12 +19,21 @@ export class Home extends Component {
           rel="stylesheet"
         />
         <header className="header">
-          <h1 className="title" style={{marginBottom: "0px", color: "#4775d1"}}>TOKEN</h1>
-          <p style={{marginTop: "0px", color: "#adc2eb"}}><i>An app to help alcoholics achieve sobriety.</i></p>
+          <h1
+            className="title"
+            style={{ marginBottom: "0px", color: "#4775d1" }}
+          >
+            TOKEN
+          </h1>
+          <p style={{ marginTop: "0px", color: "#adc2eb" }}>
+            <i>An app to help alcoholics achieve sobriety.</i>
+          </p>
           <img src={logo} className="logo" alt="logo" />
         </header>
-        <p style={{color: "#adc2eb", marginBottom: "0px"}}><i>Please enter your credentials:</i></p>
-        <Form getLoggedIn={getLoggedIn}/>
+        <p style={{ color: "#adc2eb", marginBottom: "0px" }}>
+          <i>Please enter your credentials:</i>
+        </p>
+        <Form getLoggedIn={getLoggedIn} />
       </div>
     );
   }

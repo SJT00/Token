@@ -53,7 +53,6 @@ export class Dashboard extends Component {
         if (status === Radar.STATUS.SUCCESS) {
           let _tag = user.geofences[0].tag;
           if (_tag === "liquorStore" || _tag === "pub" || _tag === "bar") {
-            console.log("Called fetch non 30 min");
             fetch("http://localhost:9000/sendText").then(() => null);
           }
         }
@@ -66,7 +65,6 @@ export class Dashboard extends Component {
         if (status === Radar.STATUS.SUCCESS) {
           let _tag = user.geofences[0].tag;
           if (_tag === "liquorStore" || _tag === "pub" || _tag === "bar") {
-            console.log("Called fetch 30 min");
             fetch("http://localhost:9000/sendText30Mins").then(() => null);
           } else {
             this.state.drinking = false;
@@ -92,6 +90,9 @@ export class Dashboard extends Component {
 
   render() {
     const { quote, author, soberDays } = this.state;
+    {
+      this.props.soberDays = soberDays;
+    }
     return (
       <>
         <div id="map-container">
@@ -114,7 +115,7 @@ export class Dashboard extends Component {
             marginRight: "18vw",
             textAlign: "center",
             color: "white",
-            marginTop: "5px",
+            marginTop: "5px"
           }}
         >
           -<i>{author}</i>

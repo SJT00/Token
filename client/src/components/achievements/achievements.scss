@@ -9,7 +9,14 @@
     border: 10px solid white;
     border-radius: 25px;
     margin: 5px;
+    #progressbar {
+      width: 75%;
+      margin: 1% auto 0 auto;
+      height: 3ex;
+      border: 10px solid white;
+    }
     #token-holder {
+      margin-left: 5px;
       img {
         border-radius: 50%;
         max-width: 20em;
