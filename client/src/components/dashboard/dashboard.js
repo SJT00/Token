@@ -26,13 +26,11 @@ export class Dashboard extends Component {
   }
 
   debugSobriety = add => {
-    console.log("pre change", this.state.startDate);
     if (add) {
       this.state.startDate = this.state.startDate.getDate - 1;
     } else {
       this.state.startDate = this.state.startDate.getDate + 1;
     }
-    console.log("post change", this.state.startDate);
   };
 
   getSoberDays = startDate => {

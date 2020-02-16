@@ -6,7 +6,6 @@ export class Progressbar extends Component {
     super(props);
   }
   render() {
-    console.log((this.props.percentage * 100).toString() + "%");
     return (
       <div id="progressbar">
         <div
