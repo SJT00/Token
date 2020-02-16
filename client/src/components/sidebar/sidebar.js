@@ -12,7 +12,14 @@ export class Sidebar extends Component {
 
   render() {
     return (
-      <div className="sidebar">
+      <div
+        className="sidebar"
+        style={
+          history.location.pathname === "/"
+            ? { visibility: "hidden" }
+            : { visibility: "visible" }
+        }
+      >
         <ul>
           <li>
             <img src={maps_icon} onClick={() => history.push("/dashboard")} />
