@@ -1,5 +1,9 @@
 ## TOKEN 
 
+![login](https://raw.githubusercontent.com/SJT00/hackthevalley/master/media/logIn.png)
+![dashboard](https://raw.githubusercontent.com/SJT00/hackthevalley/master/media/dashboard.png)
+
+
 ### Motivation 
 Heavy drinking is an issue for 19% of Canadians over the age of twelve.
 Recovering from alcoholism is very difficult and almost always requires intervention from family and friends. Unfortunately, due to stigma and other various reasons, this is hard for them to do.
