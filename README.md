@@ -1,8 +1,7 @@
 ## TOKEN 
 
-![login](https://raw.githubusercontent.com/SJT00/hackthevalley/master/media/logIn.png)
-![dashboard](https://raw.githubusercontent.com/SJT00/hackthevalley/master/media/dashboard.png)
-
+![login](./media/logIn.png)
+![dashboard](./media/dashboard.png)
 
 ### Motivation 
 Heavy drinking is an issue for 19% of Canadians over the age of twelve.
