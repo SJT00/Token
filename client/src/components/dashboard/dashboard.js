@@ -94,7 +94,6 @@ export class Dashboard extends Component {
     const { quote, author, soberDays } = this.state;
     return (
       <>
-        <Sidebar />
         <div id="map-container">
           <div id="map"></div>
         </div>
