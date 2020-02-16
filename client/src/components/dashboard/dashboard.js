@@ -1,11 +1,11 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from "react";
 
 import "./dashboard.scss";
 import Radar from "radar-sdk-js";
+import Sidebar from "../sidebar/sidebar";
 
 const publishableKeyTest =
-  "prj_test_pk_2193569a3505e0bfb9ceb29738241a65a1c1ef7c";
+    "prj_test_pk_2193569a3505e0bfb9ceb29738241a65a1c1ef7c";
 Radar.initialize(publishableKeyTest);
 
 let userId = "saad";
@@ -18,14 +18,15 @@ export class Dashboard extends Component {
         super(props);
         this.state = {
             quote: "",
-            author: ""
+            author: "",
+            drinking: false
         };
     }
 
     componentWillMount = () => {
         let quoteNumber = Math.floor(Math.random() * 1643);
         fetch("https://type.fit/api/quotes")
-            .then(function(res) {
+            .then(function (res) {
                 return res.json();
             })
             .then((data) => {
@@ -40,39 +41,82 @@ export class Dashboard extends Component {
     }
 
     trackUser = () => {
-        Radar.trackOnce(function(status, location, user, events) {
-            if (status === Radar.STATUS.SUCCESS) {
-                let _tag = user.geofences[0].tag;
-                if (_tag === "liquorStore" || _tag === "pub" || _tag === "bar"){
-                    fetch("http://localhost:9000/sendText30Mins")
-                        .then(() => null);
-                    // use this fetch to call "May have entered dangerous area"
-                    // fetch("http://localhost:9000/sendText") 
+        let time = this.state.drinking ? 60000 : 10000;
+        if (!this.state.drinking) {
+            Radar.trackOnce(function (status, location, user, events) {
+                if (status === Radar.STATUS.SUCCESS) {
+                    let _tag = user.geofences[0].tag;
+                    if (_tag === "liquorStore" || _tag === "pub" || _tag === "bar") {
+                        console.log("Called fetch non 30 min")
+                        fetch("http://localhost:9000/sendText")
+                            .then(() => null);
+                    }
                 }
-            }    
-        });
+            });
+            this.state.drinking = true;
+            time = 60000;
+            window.setTimeout(this.trackUser, time);
+        }
+        else {
+            Radar.trackOnce(function (status, location, user, events) {
+                if (status === Radar.STATUS.SUCCESS) {
+                    let _tag = user.geofences[0].tag;
+                    if (_tag === "liquorStore" || _tag === "pub" || _tag === "bar") {
+                        console.log("Called fetch 30 min")
+                        fetch("http://localhost:9000/sendText30Mins")
+                            .then(() => null);
+                    }
+                    else {
+                        this.state.drinking = false;
+                        time = 10000;
+                        return;
+                        // fix this
+                    }
+                }
+            });
+            this.state.drinking = true;
+            time = 60000;
+            window.setTimeout(this.trackUser, time)
+        }
     }
 
     componentDidMount = () => {
-        window.setInterval(this.trackUser, 10000);
-    }
+        console.log("componentDidMount");
+        let time = 10000;
+        window.setTimeout(this.trackUser, time);
+    };
 
     render() {
         const { quote, author } = this.state;
         return (
-        <>
-            <div id="map"></div>
-            <p style={{ marginLeft: "18vw", marginRight: "18vw", textAlign: "center", color: "white", marginBottom: "0px" }}>"{quote}"</p>
-            <p style={{
-                marginLeft: "18vw",
-                marginRight: "18vw", 
-                textAlign: "center", 
-                color: "white", 
-                marginTop: "5px" 
-                }}>
-                <i>{author}</i>
-            </p>
-        </>
+            <>
+                <Sidebar />
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+                <p
+                    style={{
+                        marginLeft: "18vw",
+                        marginRight: "18vw",
+                        textAlign: "center",
+                        color: "white",
+                        marginBottom: "0px"
+                    }}
+                >
+                    "{quote}"
+                </p>
+                <p
+                    style={{
+                        marginLeft: "18vw",
+                        marginRight: "18vw",
+                        textAlign: "center",
+                        color: "white",
+                        marginTop: "5px"
+                    }}
+                >
+                    -<i>{author}</i>
+                </p>
+            </>
         );
     }
 }

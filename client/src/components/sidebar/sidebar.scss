@@ -1,0 +1,26 @@
+.sidebar {
+  position: absolute;
+  background-color: #adc2eb;
+  margin: 0;
+  width: 4.5em;
+  border-radius: 0 25px 25px 0;
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0.25em;
+    padding-inline-end: 0.25em;
+    margin: 0;
+    li {
+      margin-top: 2ex;
+      margin-bottom: 2ex;
+    }
+    li:hover {
+      background-color: #8899b9;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+    }
+    img {
+      max-width: 4em;
+      border-radius: 50%;
+    }
+  }
+}
