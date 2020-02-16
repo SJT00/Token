@@ -7,8 +7,16 @@ export class Settings extends Component {
 
   render() {
     return (
-      <div className="Settings-container">
-        <div className="box"></div>
+      <div className="settings-container">
+        <div className="box">
+          <div className="grid">
+            <button>Increase Sobriety</button>
+            <button>Decrease Sobriety</button>
+            <button>Leave high-risk area</button>
+            <button>Enter high-risk area</button>
+            <button>Trigger remaining in high-risk area</button>
+          </div>
+        </div>
       </div>
     );
   }

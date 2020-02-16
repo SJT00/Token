@@ -5,6 +5,7 @@ import "./App.css";
 import Sidebar from "./components/sidebar/sidebar";
 import Home from "./components/home/home";
 import Dashboard from "./components/dashboard/dashboard";
+import Achievements from "./components/achievements/achievements";
 import Settings from "./components/settings/settings";
 
 export class App extends Component {
@@ -17,6 +18,7 @@ export class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/dashboard" component={Dashboard} />
+              <Route path="/achievements" component={Achievements} />
               <Route path="/settings" component={Settings} />
             </Switch>
           </Router>

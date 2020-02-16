@@ -1,6 +1,6 @@
-.settings-container {
+.achievements-container {
   height: 85vh;
-  width: 30vw;
+  width: 80vw;
   margin-top: 5vh;
   margin-left: 10%;
 
@@ -9,13 +9,10 @@
     border: 10px solid white;
     border-radius: 25px;
     margin: 5px;
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      padding: 1px;
-      button {
-        height: 30ex;
-        padding: 5px;
+    #token-holder {
+      img {
+        border-radius: 50%;
+        max-width: 20em;
       }
     }
   }
