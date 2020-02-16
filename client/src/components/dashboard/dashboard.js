@@ -70,7 +70,8 @@ export class Dashboard extends Component {
             marginRight: "18vw",
             textAlign: "center",
             color: "white",
-            marginTop: "5px"
+            marginTop: "5px",
+            marginBottom: "0px"
           }}
         >
           -<i>{author}</i>
