@@ -1,7 +1,7 @@
 ## TOKEN 
 
-![login](./media/logIn.png)
-![dashboard](./media/dashboard.png)
+<img src="./media/logIn.png" title="login" alt="login" width="350" height="250" />
+<img src="./media/dashboard.png" title="dashboard" alt="dashboard" width="350" height="250" />
 
 ### Motivation 
 Heavy drinking is an issue for 19% of Canadians over the age of twelve.
