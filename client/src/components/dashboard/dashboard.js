@@ -83,6 +83,7 @@ export class Dashboard extends Component {
   componentDidMount = () => {
     let startDate = new Date("2020-01-01");
     this.state.soberDays = this.getSoberDays(startDate);
+    this.props.getSoberDays(this.state.soberDays);
 
     let time = 10000;
     window.setTimeout(this.trackUser, time);
@@ -90,9 +91,6 @@ export class Dashboard extends Component {
 
   render() {
     const { quote, author, soberDays } = this.state;
-    {
-      this.props.soberDays = soberDays;
-    }
     return (
       <>
         <div id="map-container">
