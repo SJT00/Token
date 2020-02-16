@@ -3,7 +3,7 @@
   width: 80vw;
   margin-top: 5vh;
   margin-left: 10%;
-  color:rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
   .box {
     height: 100%;
     border: 10px solid white;
@@ -21,16 +21,15 @@
       display: grid;
       grid-gap: 1em;
       grid-template-columns: repeat(7, 1fr);
-      span{
+      span {
         text-align: center;
-        padding-top:10%;
+        padding-top: 10%;
         border: 2px solid white;
         border-radius: 10px 10px 10px 10px;
-      img {
-        width: 25px;
-        height: 25px;
+        img {
+          height: 10ex;
+        }
       }
-    }
     }
   }
   margin-bottom: 4ex;
